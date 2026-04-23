@@ -13,16 +13,6 @@
   </head>
   <body>
     <div id="app"></div>
-
-    <!-- Formulario fantasma para que Netlify detecte el form en build estático.
-         El form real vive en Contacto.vue y usa los mismos nombres de campo. -->
-    <form name="contacto" netlify netlify-honeypot="bot-field" hidden>
-      <input type="text" name="nombre" />
-      <input type="email" name="email" />
-      <input type="text" name="asunto" />
-      <textarea name="mensaje"></textarea>
-    </form>
-
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

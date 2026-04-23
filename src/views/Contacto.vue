@@ -43,23 +43,13 @@
           </ul>
         </div>
 
-        <form
-          class="form tarjeta"
-          name="contacto"
-          method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-          @submit.prevent="enviar"
-        >
-          <!-- Campos obligatorios para Netlify Forms -->
-          <input type="hidden" name="form-name" value="contacto" />
-          <p hidden>
-            <label>No rellenar: <input name="bot-field" v-model="honeypot" /></label>
-          </p>
+        <form class="form tarjeta" @submit.prevent="enviar">
+          <!-- Honeypot anti-spam -->
+          <input type="checkbox" name="botcheck" v-model="honeypot" style="display:none" tabindex="-1" autocomplete="off" />
 
           <div class="form-campo">
             <label for="nombre">Nombre</label>
-            <input id="nombre" name="nombre" type="text" v-model="form.nombre" required minlength="2" maxlength="80" />
+            <input id="nombre" name="name" type="text" v-model="form.nombre" required minlength="2" maxlength="80" />
           </div>
 
           <div class="form-campo">
@@ -69,12 +59,12 @@
 
           <div class="form-campo">
             <label for="asunto">Asunto</label>
-            <input id="asunto" name="asunto" type="text" v-model="form.asunto" maxlength="120" />
+            <input id="asunto" name="subject" type="text" v-model="form.asunto" maxlength="120" />
           </div>
 
           <div class="form-campo">
             <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" v-model="form.mensaje" required minlength="5" maxlength="2000"></textarea>
+            <textarea id="mensaje" name="message" v-model="form.mensaje" required minlength="5" maxlength="2000"></textarea>
           </div>
 
           <button type="submit" class="boton boton-primario" :disabled="enviando">
@@ -96,15 +86,12 @@
 <script setup>
 import { reactive, ref } from 'vue'
 
+const ACCESS_KEY = 'eb88aa55-13f6-4cf5-ba5f-e4bd56795daf'
+
 const form = reactive({ nombre: '', email: '', asunto: '', mensaje: '' })
-const honeypot = ref('')
+const honeypot = ref(false)
 const estado = ref(null)
 const enviando = ref(false)
-
-const codificar = (data) =>
-  Object.keys(data)
-    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
 
 const enviar = async () => {
   if (honeypot.value) return
@@ -112,18 +99,24 @@ const enviar = async () => {
   estado.value = null
 
   try {
-    const resp = await fetch('/', {
+    const resp = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: codificar({
-        'form-name': 'contacto',
-        nombre: form.nombre,
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify({
+        access_key: ACCESS_KEY,
+        from_name: form.nombre,
+        name: form.nombre,
         email: form.email,
-        asunto: form.asunto,
-        mensaje: form.mensaje
+        subject: form.asunto || 'Nuevo mensaje desde el portafolio',
+        message: form.mensaje,
+        botcheck: honeypot.value
       })
     })
-    if (!resp.ok) throw new Error('Error ' + resp.status)
+    const data = await resp.json()
+    if (!resp.ok || !data.success) throw new Error(data.message || 'Error ' + resp.status)
     estado.value = 'exito'
     form.nombre = ''
     form.email = ''
