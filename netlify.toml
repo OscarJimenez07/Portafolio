@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Redirecciones SPA: cualquier ruta desconocida sirve index.html
+# para que Vue Router maneje la navegación del lado cliente.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

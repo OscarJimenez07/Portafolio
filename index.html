@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%234FD1BE'/><stop offset='100%25' stop-color='%237BC7E6'/></linearGradient></defs><rect width='64' height='64' rx='14' fill='url(%23g)'/><text x='50%25' y='55%25' text-anchor='middle' font-family='Poppins,Arial' font-size='32' font-weight='700' fill='%23FFFFFF' dominant-baseline='middle'>OJ</text></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portafolio de Oscar Javier Jiménez Celis — Analista TI y Desarrollador Full Stack" />
+    <meta name="author" content="Oscar Javier Jiménez Celis" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Oscar Jiménez · Portafolio</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <!-- Formulario fantasma para que Netlify detecte el form en build estático.
+         El form real vive en Contacto.vue y usa los mismos nombres de campo. -->
+    <form name="contacto" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="nombre" />
+      <input type="email" name="email" />
+      <input type="text" name="asunto" />
+      <textarea name="mensaje"></textarea>
+    </form>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,315 @@
+/* ============================================================
+   Variables de tema · Paleta clara azul blur con menta
+   ============================================================ */
+:root {
+  --color-fondo: #E8F1FA;
+  --color-fondo-2: #FFFFFF;
+  --color-fondo-3: #D6E6F5;
+  --color-acento: #2DB8A0;
+  --color-acento-2: #4FD1BE;
+  --color-acento-suave: rgba(45, 184, 160, 0.12);
+  --color-texto: #2A3B55;
+  --color-texto-2: #5B6F8C;
+  --color-titulo: #0F2847;
+  --color-borde: rgba(45, 184, 160, 0.25);
+  --color-azul-suave: #B8D4EC;
+  --color-azul-claro: #DCE9F7;
+
+  --gradiente-fondo: linear-gradient(135deg, #DCE9F7 0%, #E6F4F1 50%, #CCE3F5 100%);
+  --gradiente-acento: linear-gradient(135deg, #4FD1BE 0%, #7BC7E6 100%);
+
+  --fuente: 'Poppins', 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  --sombra-suave: 0 8px 24px -12px rgba(46, 75, 120, 0.25);
+  --sombra-fuerte: 0 20px 40px -15px rgba(46, 75, 120, 0.35);
+  --radio: 12px;
+  --transicion: 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* ============================================================
+   Reset
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fuente);
+  background: var(--gradiente-fondo);
+  background-attachment: fixed;
+  color: var(--color-texto);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: -20%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(79, 209, 190, 0.25) 0%, transparent 70%);
+  filter: blur(80px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -20%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(123, 199, 230, 0.3) 0%, transparent 70%);
+  filter: blur(80px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+a {
+  color: var(--color-acento);
+  text-decoration: none;
+  transition: var(--transicion);
+}
+
+a:hover {
+  opacity: 0.85;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ============================================================
+   Layout
+   ============================================================ */
+.contenedor {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.seccion {
+  padding: 90px 0 60px;
+  min-height: calc(100vh - 80px);
+  animation: fadeIn 0.6s ease-out;
+}
+
+.seccion-titulo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+  color: var(--color-titulo);
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 600;
+}
+
+.seccion-titulo::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--color-acento);
+}
+
+.seccion-titulo::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-borde);
+}
+
+/* ============================================================
+   Tarjetas
+   ============================================================ */
+.tarjeta {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--radio);
+  padding: 28px;
+  transition: var(--transicion);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--sombra-suave);
+}
+
+.tarjeta:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-acento);
+  box-shadow: var(--sombra-fuerte);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* ============================================================
+   Botones
+   ============================================================ */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: var(--radio);
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: 1px solid var(--color-acento);
+  color: var(--color-acento);
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transicion);
+}
+
+.boton:hover {
+  background: var(--color-acento-suave);
+  transform: translateY(-2px);
+}
+
+.boton-primario {
+  background: var(--gradiente-acento);
+  border-color: transparent;
+  color: #FFFFFF;
+  box-shadow: 0 6px 18px -6px rgba(45, 184, 160, 0.5);
+}
+
+.boton-primario:hover {
+  background: var(--color-fondo-2);
+  color: var(--color-acento);
+  border-color: var(--color-acento);
+}
+
+/* ============================================================
+   Etiquetas de tecnología
+   ============================================================ */
+.chip {
+  display: inline-block;
+  padding: 6px 14px;
+  margin: 4px 6px 4px 0;
+  background: var(--color-acento-suave);
+  color: var(--color-acento);
+  border: 1px solid var(--color-borde);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+/* ============================================================
+   Formulario
+   ============================================================ */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-campo label {
+  font-size: 0.9rem;
+  color: var(--color-texto-2);
+}
+
+.form-campo input,
+.form-campo textarea {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 12px 14px;
+  color: var(--color-texto);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: var(--transicion);
+}
+
+.form-campo input:focus,
+.form-campo textarea:focus {
+  outline: none;
+  border-color: var(--color-acento);
+  box-shadow: 0 0 0 3px var(--color-acento-suave);
+}
+
+.form-campo textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.form-alerta {
+  padding: 12px 16px;
+  border-radius: var(--radio);
+  font-size: 0.9rem;
+}
+
+.form-alerta.exito {
+  background: var(--color-acento-suave);
+  border: 1px solid var(--color-acento);
+  color: var(--color-acento);
+}
+
+.form-alerta.error {
+  background: rgba(255, 99, 132, 0.1);
+  border: 1px solid rgba(255, 99, 132, 0.5);
+  color: #ffb3c0;
+}
+
+/* ============================================================
+   Animaciones
+   ============================================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 768px) {
+  .seccion {
+    padding: 80px 0 40px;
+  }
+  .tarjeta {
+    padding: 20px;
+  }
+  .boton {
+    padding: 10px 20px;
+  }
+}
