@@ -144,15 +144,17 @@
 }
 
 .foto-wrap img {
-  width: 108%;
-  height: 108%;
-  object-fit: contain;
-  object-position: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 25%;
+  transform: scale(1.15);
+  transform-origin: 50% 18%;
   transition: transform 0.5s ease;
 }
 
 .foto-wrap:hover img {
-  transform: scale(1.03);
+  transform: scale(1.19);
 }
 
 @media (max-width: 768px) {
