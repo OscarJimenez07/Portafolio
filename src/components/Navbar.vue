@@ -45,7 +45,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   height: 72px;
   display: flex;
   align-items: center;
-  background: rgba(10, 22, 40, 0.8);
+  background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   z-index: 100;

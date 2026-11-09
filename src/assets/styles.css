@@ -1,27 +1,27 @@
 /* ============================================================
-   Variables de tema · Paleta oscura azul marino con menta
+   Variables de tema · Paleta negra con menta
    ============================================================ */
 :root {
   color-scheme: dark;
-  --color-fondo: #0A1628;
-  --color-fondo-2: #112240;
-  --color-fondo-3: #1A2F52;
+  --color-fondo: #000000;
+  --color-fondo-2: #111111;
+  --color-fondo-3: #1A1A1A;
   --color-acento: #4FD1BE;
   --color-acento-2: #64FFDA;
   --color-acento-suave: rgba(79, 209, 190, 0.12);
-  --color-texto: #C9D6EA;
-  --color-texto-2: #8A9BB8;
-  --color-titulo: #E6F1FF;
+  --color-texto: #D4D4D4;
+  --color-texto-2: #9A9A9A;
+  --color-titulo: #F5F5F5;
   --color-borde: rgba(79, 209, 190, 0.22);
-  --color-azul-suave: #1E3A5F;
-  --color-azul-claro: #172A46;
+  --color-azul-suave: #222222;
+  --color-azul-claro: #181818;
 
   /* Superficies translúcidas (tarjetas, navbar, chips) */
-  --color-superficie: rgba(17, 34, 64, 0.65);
-  --color-superficie-fuerte: rgba(17, 34, 64, 0.88);
-  --color-superficie-solida: #0F1F3A;
+  --color-superficie: rgba(20, 20, 20, 0.7);
+  --color-superficie-fuerte: rgba(26, 26, 26, 0.92);
+  --color-superficie-solida: #121212;
 
-  --gradiente-fondo: linear-gradient(135deg, #0A1628 0%, #0D1F33 50%, #0B1A30 100%);
+  --gradiente-fondo: linear-gradient(135deg, #000000 0%, #0A0A0A 50%, #050505 100%);
   --gradiente-acento: linear-gradient(135deg, #4FD1BE 0%, #7BC7E6 100%);
 
   --fuente: 'Poppins', 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
@@ -79,7 +79,7 @@ body::after {
   left: -10%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(123, 199, 230, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(79, 209, 190, 0.08) 0%, transparent 70%);
   filter: blur(80px);
   z-index: -1;
   pointer-events: none;
@@ -199,7 +199,7 @@ button {
 .boton-primario {
   background: var(--gradiente-acento);
   border-color: transparent;
-  color: #0A1628;
+  color: #000000;
   font-weight: 600;
   box-shadow: 0 6px 18px -6px rgba(79, 209, 190, 0.45);
 }
