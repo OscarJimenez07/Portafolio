@@ -110,7 +110,10 @@ const enviar = async () => {
         from_name: form.nombre,
         name: form.nombre,
         email: form.email,
-        subject: form.asunto || 'Nuevo mensaje desde el portafolio',
+        subject: form.asunto
+          ? `[Portafolio] ${form.asunto} · ${form.nombre}`
+          : `[Portafolio] Nuevo mensaje de ${form.nombre}`,
+        replyto: form.email,
         message: form.mensaje,
         botcheck: honeypot.value
       })

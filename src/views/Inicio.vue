@@ -26,7 +26,7 @@
 
       <div class="hero-foto">
         <div class="foto-wrap">
-          <img src="../assets/foto-oscar.png" alt="Foto de Oscar Javier Jiménez Celis" />
+          <img src="../assets/foto-oscar.jpg" alt="Foto de Oscar Javier Jiménez Celis" />
         </div>
       </div>
     </div>
