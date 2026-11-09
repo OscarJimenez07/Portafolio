@@ -110,7 +110,7 @@ import { proyectos } from '../data/proyectos.js'
 
 .nota {
   padding: 10px 12px;
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--color-superficie);
   border: 1px solid var(--color-borde);
   border-radius: var(--radio);
   color: var(--color-texto-2);

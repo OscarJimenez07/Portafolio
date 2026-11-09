@@ -76,7 +76,7 @@ import { experiencia } from '../data/experiencia.js'
 .periodo {
   font-size: 0.85rem;
   color: var(--color-texto-2);
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--color-superficie);
   border: 1px solid var(--color-borde);
   padding: 6px 14px;
   border-radius: 999px;

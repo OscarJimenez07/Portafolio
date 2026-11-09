@@ -78,7 +78,7 @@
 .destacado {
   margin-top: 32px;
   padding: 24px;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--color-superficie);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-left: 3px solid var(--color-acento);

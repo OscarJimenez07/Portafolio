@@ -45,7 +45,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   height: 72px;
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(10, 22, 40, 0.8);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   z-index: 100;
@@ -171,11 +171,11 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
     flex-direction: column;
     align-items: flex-start;
     padding: 30px 24px;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--color-superficie-solida);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-left: 1px solid var(--color-borde);
-    box-shadow: -10px 0 30px -15px rgba(46, 75, 120, 0.25);
+    box-shadow: -10px 0 30px -15px rgba(0, 0, 0, 0.5);
     transform: translateX(100%);
     transition: transform 0.3s ease;
   }

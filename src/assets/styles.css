@@ -1,26 +1,32 @@
 /* ============================================================
-   Variables de tema · Paleta clara azul blur con menta
+   Variables de tema · Paleta oscura azul marino con menta
    ============================================================ */
 :root {
-  --color-fondo: #E8F1FA;
-  --color-fondo-2: #FFFFFF;
-  --color-fondo-3: #D6E6F5;
-  --color-acento: #2DB8A0;
-  --color-acento-2: #4FD1BE;
-  --color-acento-suave: rgba(45, 184, 160, 0.12);
-  --color-texto: #2A3B55;
-  --color-texto-2: #5B6F8C;
-  --color-titulo: #0F2847;
-  --color-borde: rgba(45, 184, 160, 0.25);
-  --color-azul-suave: #B8D4EC;
-  --color-azul-claro: #DCE9F7;
+  color-scheme: dark;
+  --color-fondo: #0A1628;
+  --color-fondo-2: #112240;
+  --color-fondo-3: #1A2F52;
+  --color-acento: #4FD1BE;
+  --color-acento-2: #64FFDA;
+  --color-acento-suave: rgba(79, 209, 190, 0.12);
+  --color-texto: #C9D6EA;
+  --color-texto-2: #8A9BB8;
+  --color-titulo: #E6F1FF;
+  --color-borde: rgba(79, 209, 190, 0.22);
+  --color-azul-suave: #1E3A5F;
+  --color-azul-claro: #172A46;
 
-  --gradiente-fondo: linear-gradient(135deg, #DCE9F7 0%, #E6F4F1 50%, #CCE3F5 100%);
+  /* Superficies translúcidas (tarjetas, navbar, chips) */
+  --color-superficie: rgba(17, 34, 64, 0.65);
+  --color-superficie-fuerte: rgba(17, 34, 64, 0.88);
+  --color-superficie-solida: #0F1F3A;
+
+  --gradiente-fondo: linear-gradient(135deg, #0A1628 0%, #0D1F33 50%, #0B1A30 100%);
   --gradiente-acento: linear-gradient(135deg, #4FD1BE 0%, #7BC7E6 100%);
 
   --fuente: 'Poppins', 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  --sombra-suave: 0 8px 24px -12px rgba(46, 75, 120, 0.25);
-  --sombra-fuerte: 0 20px 40px -15px rgba(46, 75, 120, 0.35);
+  --sombra-suave: 0 8px 24px -12px rgba(0, 0, 0, 0.5);
+  --sombra-fuerte: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
   --radio: 12px;
   --transicion: 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
@@ -60,7 +66,7 @@ body::before {
   right: -10%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(79, 209, 190, 0.25) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(79, 209, 190, 0.12) 0%, transparent 70%);
   filter: blur(80px);
   z-index: -1;
   pointer-events: none;
@@ -73,7 +79,7 @@ body::after {
   left: -10%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(123, 199, 230, 0.3) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(123, 199, 230, 0.12) 0%, transparent 70%);
   filter: blur(80px);
   z-index: -1;
   pointer-events: none;
@@ -146,10 +152,10 @@ button {
    Tarjetas
    ============================================================ */
 .tarjeta {
-  background: rgba(255, 255, 255, 0.65);
+  background: var(--color-superficie);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--color-borde);
   border-radius: var(--radio);
   padding: 28px;
   transition: var(--transicion);
@@ -162,7 +168,7 @@ button {
   transform: translateY(-6px);
   border-color: var(--color-acento);
   box-shadow: var(--sombra-fuerte);
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--color-superficie-fuerte);
 }
 
 /* ============================================================
@@ -193,8 +199,9 @@ button {
 .boton-primario {
   background: var(--gradiente-acento);
   border-color: transparent;
-  color: #FFFFFF;
-  box-shadow: 0 6px 18px -6px rgba(45, 184, 160, 0.5);
+  color: #0A1628;
+  font-weight: 600;
+  box-shadow: 0 6px 18px -6px rgba(79, 209, 190, 0.45);
 }
 
 .boton-primario:hover {
@@ -240,7 +247,7 @@ button {
 
 .form-campo input,
 .form-campo textarea {
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--color-superficie-solida);
   border: 1px solid var(--color-borde);
   border-radius: var(--radio);
   padding: 12px 14px;

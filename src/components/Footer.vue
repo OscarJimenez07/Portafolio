@@ -28,7 +28,7 @@ const año = computed(() => new Date().getFullYear())
 .footer {
   padding: 32px 0;
   border-top: 1px solid var(--color-borde);
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--color-superficie);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }

@@ -60,7 +60,7 @@
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 12px;
-  background: linear-gradient(135deg, #0F2847 0%, #2DB8A0 100%);
+  background: linear-gradient(135deg, #E6F1FF 0%, #4FD1BE 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -72,7 +72,7 @@
 
 .titulo {
   font-size: clamp(1rem, 2vw, 1.35rem);
-  color: #000000;
+  color: var(--color-titulo);
   font-weight: 500;
   line-height: 1.35;
   margin-bottom: 28px;

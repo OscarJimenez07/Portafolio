@@ -99,7 +99,7 @@ import { educacion, complementaria } from '../data/educacion.js'
   display: inline-block;
   font-size: 0.72rem;
   color: var(--color-texto-2);
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--color-superficie);
   border: 1px solid var(--color-borde);
   padding: 4px 10px;
   border-radius: 999px;
