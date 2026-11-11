@@ -36,4 +36,4 @@ Todos los datos vivien en `src/data/`:
 - `habilidades.js` — stack técnico
 - `educacion.js` — formación académica
 
-Para cambiar la foto: reemplaza `src/assets/foto-oscar.png`.
+Para cambiar la foto: reemplaza `src/assets/foto-oscar.jpg`.
